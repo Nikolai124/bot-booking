@@ -118,7 +118,8 @@ async def choose_slot(callback: CallbackQuery, callback_data: SlotCb, state: FSM
     with suppress(TelegramBadRequest):
         await callback.message.edit_reply_markup(reply_markup=None)
     await callback.message.answer(
-        "Оставь номер, чтобы мастер мог связаться с тобой. Нажми кнопку ниже или напиши номер.",
+        "Оставь номер, чтобы мастер мог связаться с тобой. Нажми кнопку ниже или напиши номер.\n\n"
+        "⚠️ Это демо: лучше напиши любой выдуманный номер, например +7 900 000-00-00",
         reply_markup=kb.phone_keyboard(),
     )
     await callback.answer()
